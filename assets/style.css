@@ -4,8 +4,13 @@
 }
 body {
   margin: 0;
-  background: rgb(32,35,53);
-background: linear-gradient(148deg, rgba(32,35,53,1) 0%, rgba(33,36,54,1) 44%, rgba(79,86,130,1) 100%);
+  background: rgb(32, 35, 53);
+  background: linear-gradient(
+    148deg,
+    rgba(32, 35, 53, 1) 0%,
+    rgba(33, 36, 54, 1) 44%,
+    rgba(79, 86, 130, 1) 100%
+  );
   width: 100vw;
   height: 100vh;
   display: grid;
@@ -17,14 +22,14 @@ form {
   justify-content: space-between;
   margin-bottom: 30px;
 }
-button{
+button {
   border: none;
   padding: 5px 10px;
   margin: 10px;
   border-radius: 6px;
   font-size: 1.2em;
 }
-button:hover{
+button:hover {
   cursor: pointer;
   box-shadow: 0 0 3px 1px pink inset;
 }
@@ -44,13 +49,13 @@ input[type="submit"] {
   border-radius: 0 12px 12px 0;
   font-size: 1.1em;
 }
-.addTodo{
+.addTodo {
   border-radius: 12px 0 0 12px;
 }
 input[type="submit"]:hover {
   cursor: pointer;
 }
-input.addTag{
+input.addTag {
   width: 30%;
   border-left: solid 2px gray;
 }
@@ -87,17 +92,17 @@ input[type="checkbox"] {
   width: 25px;
   height: 25px;
 }
-.main-title{
+.main-title {
   font-family: cursive;
   text-align: center;
   font-size: 70px;
   color: white;
 }
-.active{
+.active {
   border-radius: 5px;
   font-weight: 600;
   box-shadow: 0 0 10px 0 gray;
 }
-::placeholder{
+::placeholder {
   font-size: 1.1em;
 }

@@ -10,17 +10,17 @@ export default {
   data() {
     return {
       newTodo: "",
-      newTag:''
+      newTag: "",
     };
   },
 
   methods: {
     addNewTodo() {
-      if(!this.newTodo){
-        alert('type todo plz!')
-        return
+      if (!this.newTodo) {
+        alert("type todo plz!");
+        return;
       }
-      this.$emit("addToTheArray", this.newTodo , this.newTag);
+      this.$emit("addToTheArray", this.newTodo, this.newTag);
       this.newTodo = "";
       this.newTag = "";
     },

@@ -2,7 +2,8 @@ import TodosItem from "./TodosItem.js";
 import TodosTag from "./TodosTag.js";
 export default {
   components: {
-    TodosItem, TodosTag
+    TodosItem,
+    TodosTag,
   },
   /*html*/
   template: `
@@ -40,11 +41,11 @@ export default {
     //   });
     //   return allItems
     // },
-   
-    filteredArray(){
-      if(this.currentTag === 'all') return this.todosArray
-      return this.todosArray.filter(a=>a.tag === this.currentTag)
-    }
+
+    filteredArray() {
+      if (this.currentTag === "all") return this.todosArray;
+      return this.todosArray.filter((a) => a.tag === this.currentTag);
+    },
   },
   // methods:{
   //   change(tagFromChield){

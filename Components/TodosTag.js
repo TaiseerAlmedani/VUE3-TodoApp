@@ -1,5 +1,5 @@
-export default{
-  template:/*HTML*/`
+export default {
+  template: /*HTML*/ `
   <button
   :class="{'active': currentTag === tag}"
    @click="$emit('update:currentTag' ,tag)"
@@ -7,13 +7,13 @@ export default{
    {{ tag }}
    </button>
   `,
-  props:{
-    initalTags:Array,
-    currentTag:String
+  props: {
+    initalTags: Array,
+    currentTag: String,
   },
-  computed:{
+  computed: {
     tags() {
-      return ['all' , ...new Set(this.initalTags)]
+      return ["all", ...new Set(this.initalTags)];
     },
-  }
-}
+  },
+};
