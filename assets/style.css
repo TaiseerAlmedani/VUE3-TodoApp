@@ -19,8 +19,10 @@ form {
 }
 button{
   border: none;
-  padding: 5px;
+  padding: 5px 10px;
   margin: 10px;
+  border-radius: 6px;
+  font-size: 1.2em;
 }
 button:hover{
   cursor: pointer;
@@ -29,7 +31,7 @@ button:hover{
 input {
   display: block;
   width: 100%;
-  height: 50px;
+  height: 60px;
   border: none;
   padding: 5px;
   font-weight: bold;
@@ -40,14 +42,18 @@ input[type="submit"] {
   background-color: rgb(255, 192, 203);
   border-left: solid 1px black;
   border-radius: 0 12px 12px 0;
+  font-size: 1.1em;
 }
-input[type="text"]{
-border-radius: 12px 0 0 12px;
+.addTodo{
+  border-radius: 12px 0 0 12px;
 }
 input[type="submit"]:hover {
   cursor: pointer;
 }
-
+input.addTag{
+  width: 30%;
+  border-left: solid 2px gray;
+}
 .inProgress,
 .done {
   padding: 20px;
@@ -86,4 +92,12 @@ input[type="checkbox"] {
   text-align: center;
   font-size: 70px;
   color: white;
+}
+.active{
+  border-radius: 5px;
+  font-weight: 600;
+  box-shadow: 0 0 10px 0 gray;
+}
+::placeholder{
+  font-size: 1.1em;
 }

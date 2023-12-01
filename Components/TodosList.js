@@ -1,17 +1,20 @@
 import TodosItem from "./TodosItem.js";
+import TodosTag from "./TodosTag.js";
 export default {
   components: {
-    TodosItem,
+    TodosItem, TodosTag
   },
   /*html*/
   template: `
   <div :class="className" v-if="todosArray.length">
   <h1>{{ title }}</h1>
-  <button 
-   v-for="tag in tags">{{ tag }}</button>
+  <todos-tag 
+  v-model:currentTag="currentTag"
+  :initalTags="todosArray.map(a=>a.tag)"
+   ></todos-tag>
   <ul>
     <todos-item 
-     v-for="todo in todosArray"
+     v-for="todo in filteredArray"
      :key="todo.id"
      :todoItem="todo">
       </todos-item>
@@ -23,19 +26,29 @@ export default {
     todosArray: Array,
     className: String,
   },
-  data(){
-    return{
-      currentTag:''
-    }
+  data() {
+    return {
+      currentTag: "all",
+    };
   },
-  computed:{
-    tags(){
-      return new Set(this.todosArray.map(a=>a.tag))
-    }
-  },
-  methods:{
+  computed: {
+    // tags() {
+    //   let arr = new Set(this.todosArray.map((a) => a.tag))
+    //   let allItems = ["all"]
+    //   arr.forEach(a => {
+    //     allItems.push(a)
+    //   });
+    //   return allItems
+    // },
+   
     filteredArray(){
-      alert(tag)
+      if(this.currentTag === 'all') return this.todosArray
+      return this.todosArray.filter(a=>a.tag === this.currentTag)
     }
-  }
+  },
+  // methods:{
+  //   change(tagFromChield){
+  //     this.currentTag = tagFromChield
+  //   }
+  // }
 };

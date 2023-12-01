@@ -4,7 +4,7 @@ export default {
   components: { TodosList, TodosAdd },
   template: /*html*/ `
   <h1 class="main-title">Vue3 Todo App</h1>
- <todos-add v-on:addToTheArray="add"></todos-add>
+ <todos-add @addToTheArray="add"></todos-add>
   <todos-list 
   title="In Progress" 
   className="inProgress"
@@ -20,9 +20,9 @@ export default {
     return {
       todos: [
         { id: 1, title: "study the vue lesson", isComplete: false , tag:'course' },
-        { id: 2, title: "Do the homework", isComplete: false , tag:'course' },
+        { id: 2, title: "Do the homework", isComplete: false      , tag:'course' },
         { id: 3, title: "Read from the Docs", isComplete: false  , tag:'study'},
-        { id: 4, title: "Make mony", isComplete: true  , tag:'work'},
+        { id: 4, title: "Make mony", isComplete: true  ,           tag:'work'},
       ],
     };
   },
@@ -35,11 +35,12 @@ export default {
     },
   },
   methods: {
-    add(addThisTitle) {
+    add(addThisTitle , addThisTag) {
       this.todos.push({
         id: this.todos.length + 1,
         title: addThisTitle,
         isComplete: false,
+        tag:addThisTag,
       });
     },
   },
